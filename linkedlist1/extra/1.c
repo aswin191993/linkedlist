@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+
+
+struct node{
+int data;
+struct node* next;
+};
+
+
+struct node* list(struct node* h,struct node*n){
+
+struct node* t;
+t=malloc(sizeof(struct node*);
+t=n;
+if(h==0) return n;
+while(t->next!=NULL)
+{
+t=t->next;
+}
+t->next=n;
+return h;
+}
+
+main()
+{
+int dat=2;
+int ad=3;
+printf("daa:%d",list(dat,ad));
+}
+

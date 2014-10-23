@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+struct node{
+        int data;
+        struct node* next;
+};
+
+void display(struct node* head)
+{
+	while(head!=NULL)
+	{
+		printf("%d\n",head->data);
+		head=head->next;
+	}
+}
+void count(struct node* head)
+{
+	int cnt=0;
+	struct node *countval;
+	countval=malloc(sizeof(struct node));
+	countval=head;
+	while(countval!=NULL)
+	{
+		cnt=cnt+1;
+		countval=countval->next;
+	}
+	if(countval==NULL)
+	{
+		printf("nbr of cnt:%d\n",cnt);
+	}
+}
+
+void delet(struct node **head, int d)
+{
+	struct node *del;
+	del=malloc(sizeof(struct node));
+	int tmp;
+	tmp=d;
+	//del->next=*head;
+	if((d)==5)
+	{
+		//det->data=(del->data->data);
+		//*head=del;
+		del->data=9;
+		del->next=*head;
+		*head=del;
+	}
+	else
+	{
+
+		del->data=d;
+		del->next=*head;
+		*head=del;
+	}
+}
+
+int main()
+{
+	struct node* head;
+	int i;
+	head=NULL;
+	for(i=1;i<=12;i++)
+	{
+		delet(&head,i);
+	}
+	//delet(&head,6);
+	display(head);
+        count(head);
+	return(0);
+}
+
